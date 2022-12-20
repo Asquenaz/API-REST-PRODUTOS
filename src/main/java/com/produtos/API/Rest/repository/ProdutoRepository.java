@@ -7,6 +7,8 @@ import org.springframework.data.repository.CrudRepository;
 public interface ProdutoRepository extends JpaRepository <Produtos, Long> {
     Produtos findById(long id);
 
+    Produtos findById(Produtos id);
+
     Produtos deleteById(long id);
 
 }

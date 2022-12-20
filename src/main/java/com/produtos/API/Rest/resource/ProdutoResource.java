@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.produtos.API.Rest.repository.ProdutoRepository;
 import org.springframework.web.bind.annotation.*;
 import com.produtos.API.Rest.model.Produtos;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -46,7 +47,11 @@ public class ProdutoResource {
 
     @PutMapping(value = "/produtos/atualizar")
     public Produtos atualizarProduto(@RequestBody Produtos produtos){
+       produtos.setId(produtos.getId());
+       produtos.setNome(produtos.getNome());
+       produtos.setQuantidade(produtos.getQuantidade());
+       produtos.setValor(produtos.getValor());
 
-        return produtoRepository.save(produtos);
+       return produtoRepository.save(produtos);
     }
 }
