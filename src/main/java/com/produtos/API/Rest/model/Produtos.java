@@ -1,6 +1,7 @@
 package com.produtos.API.Rest.model;
 
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,8 +11,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 @NoArgsConstructor
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name = "TB_Produtos")
 public class Produtos implements Serializable {
@@ -25,7 +25,7 @@ public class Produtos implements Serializable {
 
     private String nome;
 
-    private BigDecimal quantidade;
+    private long quantidade;
 
     private BigDecimal valor;
 
